@@ -19,6 +19,6 @@ void SemiAutomatic::SingleShotMode() {
     return;
   }
   --ammo_;
-  std::println("{} : un projectile, {} degats. ({}/{})", name_, damage_, ammo_,
+  std::println("{} : un coup, {} degats. ({}/{})", name_, damage_, ammo_,
                magazine_capacity_);
 }

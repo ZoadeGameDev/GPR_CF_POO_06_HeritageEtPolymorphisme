@@ -16,6 +16,6 @@ void FullAuto::FireFullAuto() {
   }
   ammo_ -= burstLenght_;
   int actual_damage = damage_ * burstLenght_;
-  std::println("{} : un projectile, {} degats. ({}/{})", name_, actual_damage, ammo_,
+  std::println("{} : {} coups, {} degats. ({}/{})", name_, burstLenght_, actual_damage, ammo_,
                magazine_capacity_);
 }
