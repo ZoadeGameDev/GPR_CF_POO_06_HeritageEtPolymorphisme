@@ -8,6 +8,8 @@
 // savoir laquelle il tient.
 int main() {
   Weapon pistolet("Pistolet", 24, 1.1f, 12);
+  Weapon w;
+
 
   std::println("--- STAND DE TIR ---");
   while (true) {
