@@ -4,5 +4,7 @@ add_executable(01_une_seule_arme
         src/firearm.cpp
         include/firearm.h
         src/semiautomatic.cpp
-        include/semiautomatic.h)
+        include/semiautomatic.h
+        src/fullauto.cpp
+        include/FullAuto.h)
 target_include_directories(01_une_seule_arme PRIVATE include)

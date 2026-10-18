@@ -9,7 +9,7 @@
 class SemiAutomatic : public Firearm {
 public:
   void Fire() override;
-protected:
+private:
   void SingleShotMode();
 
 
