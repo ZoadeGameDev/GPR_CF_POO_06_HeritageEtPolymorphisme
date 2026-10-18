@@ -8,7 +8,7 @@
 
 #include "firearm.h"
 
-void Firearm::Fire() {
+void Firearm::Fire(){
    if (!CanFire()) {
      std::println("{} : chargeur vide.", name_);
      return;

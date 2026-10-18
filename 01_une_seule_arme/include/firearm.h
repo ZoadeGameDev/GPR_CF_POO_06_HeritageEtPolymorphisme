@@ -9,7 +9,7 @@
 class Firearm : public Weapon {
 public:
 
-  virtual void Reload();
+  void Reload();
   void Fire() override;
 
 
