@@ -12,18 +12,18 @@ public:
   // Constructor
   Firearm(std::string name, int damage, float weight, int magazine_capacity, int ammo, std::string caliber);
 
-  void Reload();
+  void Reload() override;
   void Fire() override;
 
-  int ammo() const;
-  int magazine_capacity() const;
+  int ammo() const override;
+  int magazine_capacity() const override;
 
  protected:
   int magazine_capacity_ = 0;
   int ammo_ = 0;
   std::string caliber_;
 
-  bool CanFire() const;
+ bool CanFire() const;
 
 
 

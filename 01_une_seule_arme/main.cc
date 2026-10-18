@@ -17,9 +17,9 @@ int main() {
   // Rifle --> SemiAutomatic, moitie charge au debut
   SemiAutomatic rifle("Rifle", 40, 10.0f, 20, 10, ".22 LR");
   // Assault Rifle --> FullAuto
-  FullAuto assault_rifle("Assault Rifle", 14, 20, 40, 40, "5.56×45mm", 5);
+  FullAuto assault_rifle("Assault Rifle", 14, 20, 42, 42, "5.56×45mm", 5);
   // Knife --> Melee
-  Melee knife("Knife", 20, 1.0f, 2);
+  Melee knife("Knife", 10, 1.0f, 2);
 
 
 
@@ -33,13 +33,13 @@ int main() {
   Weapon* current_weapon = nullptr; // * -> let it change to a subclass, nullptr -> say it's contain nothing
   // We will use the "current_weapon" variable name as a default use case
   if (choix_arme == "1") {
-    Firearm current_weapon = pistolet;
+    current_weapon = &pistolet;
   } else if (choix_arme == "2") {
-    SemiAutomatic current_weapon = rifle;
+    current_weapon = &rifle;
   } else if (choix_arme == "3") {
-    FullAuto current_weapon = assault_rifle;
+    current_weapon = &assault_rifle;
   } else {
-    Melee current_weapon = knife;
+    current_weapon = &knife;
   }
 
 
@@ -47,8 +47,8 @@ int main() {
 
   while (true) {
     std::println("");
-    std::println("  1  {}  {}/{}", current_weapon.name(), current_weapon.ammo(),
-                 current_weapon.magazine_capacity());
+    std::println("  1  {}  {}/{}", current_weapon->name(), current_weapon->ammo(),
+                 current_weapon->magazine_capacity());
     std::println("  r  recharger    q  quitter");
     std::print("> ");
 
@@ -57,9 +57,9 @@ int main() {
 
     if (choix == 'q') break;
     if (choix == 'r') {
-      current_weapon.Reload();
+      current_weapon->Reload();
     } else if (choix == '1') {
-      current_weapon.Fire();
+      current_weapon->Fire();
     } else {
       std::println("Touche inconnue.");
     }

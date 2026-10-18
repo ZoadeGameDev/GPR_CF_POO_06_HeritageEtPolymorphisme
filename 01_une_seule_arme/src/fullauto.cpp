@@ -17,12 +17,21 @@ void FullAuto::Fire() {
 }
 
 void FullAuto::FireFullAuto() {
+  // Fire bullet by bullet until burstLenght
+  int total_fire = 0;
   if (!CanFire()) {
     std::println("{} : chargeur vide.", name_);
-    return;
+  } else {
+    for (int i = 0; i < burstLenght_; i++) {
+      if (!CanFire()) {
+        continue;
+      }
+      total_fire++;
+      ammo_--;
+    }
+    int actual_damage = damage_ * total_fire;
+    std::println("{} : {} coups, {} degats. ({}/{})", name_, total_fire, actual_damage, ammo_,
+                 magazine_capacity_);
+
   }
-  ammo_ -= burstLenght_;
-  int actual_damage = damage_ * burstLenght_;
-  std::println("{} : {} coups, {} degats. ({}/{})", name_, burstLenght_, actual_damage, ammo_,
-               magazine_capacity_);
 }
