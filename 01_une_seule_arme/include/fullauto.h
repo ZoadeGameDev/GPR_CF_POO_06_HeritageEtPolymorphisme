@@ -9,7 +9,7 @@
 class FullAuto : public Firearm{
 public:
   // Constructor
-  FullAuto(std::string name, int damage, float weight, int magazine_capacity, int ammo, int caliber, int burstLenght);
+  FullAuto(std::string name, int damage, float weight, int magazine_capacity, int ammo, std::string caliber, int burstLenght);
 
   void Fire() override;
 private:

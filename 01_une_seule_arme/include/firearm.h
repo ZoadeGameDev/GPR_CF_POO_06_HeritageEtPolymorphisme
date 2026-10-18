@@ -6,23 +6,24 @@
 #define GPR_CF_POO_06_HERITAGEETPOLYMORPHISME_FIREARM_H
 #include "weapon.h"
 
+
 class Firearm : public Weapon {
 public:
   // Constructor
-  Firearm(std::string name, int damage, float weight, int magazine_capacity, int ammo, int caliber);
+  Firearm(std::string name, int damage, float weight, int magazine_capacity, int ammo, std::string caliber);
 
   void Reload();
   void Fire() override;
 
+  int ammo() const;
+  int magazine_capacity() const;
 
  protected:
   int magazine_capacity_ = 0;
   int ammo_ = 0;
-  int caliber_;
+  std::string caliber_;
 
   bool CanFire() const;
-  int ammo() const;
-  int magazine_capacity() const;
 
 
 
