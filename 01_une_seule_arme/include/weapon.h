@@ -7,6 +7,7 @@
 // tir n'en connait qu'une, et Fire() sait faire une seule chose.
 class Weapon {
  public:
+  // Constructor
   Weapon(std::string name, int damage, float weight);
 
   virtual void Fire() = 0; // Attaque de l'arme, virtuelle pure via "= 0"

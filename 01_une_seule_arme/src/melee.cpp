@@ -5,6 +5,10 @@
 #include "../include/melee.h"
 #include <print>
 
+// Constructor
+Melee::Melee(std::string name, int damage, float weight, int bladeLenght)
+: Weapon(name, damage, weight), bladeLenght_(bladeLenght) {}
+
 void Melee::Fire() {
   Swing();
 }

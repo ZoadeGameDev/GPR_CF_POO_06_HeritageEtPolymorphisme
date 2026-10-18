@@ -8,6 +8,9 @@
 
 class Melee : public Weapon {
 public:
+  // Constructor
+  Melee(std::string name, int damage, float weight, int bladeLenght);
+
   void Fire() override;
 
 private:

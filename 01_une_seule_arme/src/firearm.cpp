@@ -8,6 +8,10 @@
 
 #include "firearm.h"
 
+// Constructor
+Firearm::Firearm(std::string name, int damage, float weight, int magazine_capacity, int ammo, int caliber)
+  : Weapon(name, damage, weight), magazine_capacity_(magazine_capacity), ammo_(ammo), caliber_(caliber) {}
+
 void Firearm::Fire(){
    if (!CanFire()) {
      std::println("{} : chargeur vide.", name_);

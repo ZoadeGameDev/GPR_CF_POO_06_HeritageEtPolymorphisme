@@ -8,6 +8,11 @@
 
 class SemiAutomatic : public Firearm {
 public:
+  // Constructor
+  // The constructor is the exact same from SemiAutomatic to Firearm
+  // it's a way to copy it! We don't need to precise it in the .cpp!
+  using Firearm::Firearm;
+
   void Fire() override;
 private:
   void SingleShotMode();

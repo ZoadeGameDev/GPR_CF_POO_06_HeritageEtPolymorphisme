@@ -8,6 +8,8 @@
 
 class Firearm : public Weapon {
 public:
+  // Constructor
+  Firearm(std::string name, int damage, float weight, int magazine_capacity, int ammo, int caliber);
 
   void Reload();
   void Fire() override;
