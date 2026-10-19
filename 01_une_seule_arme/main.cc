@@ -30,25 +30,16 @@ int main() {
     std::cin >> choix_arme;
   }
 
-  Weapon* current_weapon = nullptr; // * -> let it change to a subclass, nullptr -> say it's contain nothing
-  // We will use the "current_weapon" variable name as a default use case
-  if (choix_arme == "1") {
-    current_weapon = &pistolet;
-  } else if (choix_arme == "2") {
-    current_weapon = &rifle;
-  } else if (choix_arme == "3") {
-    current_weapon = &assault_rifle;
-  } else {
-    current_weapon = &knife;
-  }
-
-
-
 
   while (true) {
     std::println("");
-    std::println("  1  {}  {}/{}", current_weapon->name(), current_weapon->ammo(),
-                 current_weapon->magazine_capacity());
+    std::println("  1  {}  {}/{}", pistolet.name(), pistolet.ammo(),
+                 pistolet.magazine_capacity());
+    std::println("  2  {}  {}/{}", rifle.name(), rifle.ammo(),
+             rifle.magazine_capacity());
+    std::println("  3  {}  {}/{}", assault_rifle.name(), assault_rifle.ammo(),
+         assault_rifle.magazine_capacity());
+    std::println("  4  {}  - infini -", knife.name());
     std::println("  r  recharger    q  quitter");
     std::print("> ");
 
@@ -57,9 +48,17 @@ int main() {
 
     if (choix == 'q') break;
     if (choix == 'r') {
-      current_weapon->Reload();
+      pistolet.Reload();
+      rifle.Reload();
+      assault_rifle.Reload();
     } else if (choix == '1') {
-      current_weapon->Fire();
+      pistolet.Fire();
+    } else if (choix == '2') {
+      rifle.Fire();
+    } else if (choix == '3') {
+      assault_rifle.Fire();
+    } else if (choix == '4') {
+      knife.Fire();
     } else {
       std::println("Touche inconnue.");
     }

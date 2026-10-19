@@ -12,12 +12,7 @@ class Weapon {
 
   virtual void Fire() = 0; // Attaque de l'arme, virtuelle pure via "= 0"
 
-  virtual void Reload();
-
   const std::string& name();
-
-  virtual int ammo() const;
-  virtual int magazine_capacity() const;
 
  protected:
   float weight_;
